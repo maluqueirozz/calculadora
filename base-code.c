@@ -5,13 +5,18 @@ int main(){
     char c;
     do{
     #ifdef _WIN32
-    system("CLS"); // Para windows
+    // system("CLS"); // Para windows
     #else
     system("clear"); // Para Linux/macOS
     #endif
     printf("===============================\n Calculadora Simples\n===============================\nSelecione uma operacao:\n1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\nOpcao:");
     int x, a, b;
     scanf("%d", &x);
+
+    while(x<1 || x>5){
+        printf("Opcao invalida! Tente novamente.\n");
+        scanf("%d", &x);
+    }
 
     if(x==5){
         printf("Obrigado por usar a calculadora! Ate a proxima.\n");
@@ -42,19 +47,18 @@ int main(){
     }
 
     printf("Deseja realizar outra operacao? (s/n): ");
-    scanf(" %s", &c);
-    do{
+    scanf(" %c", &c);
+
+
+    while(c != 's' && c != 'S' && c != 'n' && c != 'N'){
         printf("Resposta invalida. Por favor, digite 's' para sim ou 'n' para nao: ");
         scanf(" %c", &c);
-    }
-    while(c!='n'&&c!='N'&&c!='s'&&c!='S');
-    if (c=='n'||c=='N'){
+}
+    if (c=='n'|| c=='N'){
         printf("Obrigado por usar a calculadora! Ate a proxima.\n");
         return 0;
     }
-
-    }
-    while(c=='s'||c=='S');
+    }while(c=='s'||c=='S');
 
     return 0;
 }
