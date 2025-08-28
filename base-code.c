@@ -10,7 +10,8 @@ int main(){
     system("clear"); // Para Linux/macOS
     #endif
     printf("===============================\n Calculadora Simples\n===============================\nSelecione uma operacao:\n1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\nOpcao:");
-    int x, a, b;
+    double a, b;
+    int x;
     scanf("%d", &x);
 
     while(x<1 || x>5){
@@ -24,25 +25,25 @@ int main(){
     }
 
     printf("Digite o primeiro numero:\n");
-    scanf("%d", &a);
+    scanf("%lf", &a);
     printf("Digite o segundo numero:\n");
-    scanf("%d", &b);
+    scanf("%lf", &b);
 
     if(x==1){
-        printf("Resultado: %d + %d = %d\n", a, b, (a+b));
+        printf("Resultado: %.2lf + %.2lf = %.2lf\n", a, b, (a+b));
     }
      if(x==2){
-        printf("Resultado: %d - %d = %d\n", a, b, (a-b));
+        printf("Resultado: %.2lf - %.2lf = %.2lf\n", a, b, (a-b));
     }
      if(x==3){
-        printf("Resultado: %d * %d = %d\n", a, b, (a*b));
+        printf("Resultado: %.2lf * %.2lf = %.2lf\n", a, b, (a*b));
     }
     if(x==4){
             if(b==0){
                 printf("Erro: Divisao por zero na eh permitida.\n");
             }
             else{
-        printf("Resultado: %d / %d = %d\n", a, b, (a/b));
+        printf("Resultado: %.2lf / %.2lf = %.2lf\n", a, b, (a/b));
             }
     }
 
