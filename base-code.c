@@ -9,15 +9,22 @@ int main(){
     #else
     system("clear"); // Para Linux/macOS
     #endif
-    printf("===============================\n Calculadora Simples\n===============================\nSelecione uma operacao:\n1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\nOpcao:");
+    printf("===============================\n Calculadora Simples\n===============================\nSelecione uma operacao:\n1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\n");
     double a, b;
     int x;
-    scanf("%d", &x);
+    int resultado_scanf;
+    do {
+    printf("Opcao: ");
+    resultado_scanf = scanf("%d", &x);
 
-    while(x<1 || x>5){
-        printf("Opcao invalida! Tente novamente.\n");
-        scanf("%d", &x);
+    if (resultado_scanf != 1) {
+        printf("Entrada invalida! Por favor, digite apenas numeros.\n");
+         while (getchar() != '\n');
+          x = 0;
+          } else if (x < 1 || x > 5) {
+            printf("Opcao invalida! Escolha um numero entre 1 e 5.\n");
     }
+    } while(x<1 || x>5);
 
     if(x==5){
         printf("Obrigado por usar a calculadora! Ate a proxima.\n");
@@ -63,3 +70,5 @@ int main(){
 
     return 0;
 }
+
+
